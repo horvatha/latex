@@ -11,6 +11,15 @@ esetleg az acroread (Adobe Reader) paranccsal nézhetőek meg. Pl::
 
     evince valami.pdf&
 
+LaTeX röviden
+=============
+
+Egy rövid összefoglaló. Lefordítása és megtekintése::
+
+    cd latex-roviden
+    make
+    evince latex-roviden.pdf&
+
 Példák
 ======
 
@@ -23,11 +32,3 @@ kezdetű fájl, amit xelatex-hel::
     pdflatex valami.tex
     xelatex xelatex_clipped_picture.tex
 
-LaTeX ízelítő
-=============
-
-Egy rövid összefoglaló. Lefordítása::
-
-    cd latex-izelito/
-    make
-    

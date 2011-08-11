@@ -1,6 +1,6 @@
-latex.pdf: latex.tex
-	pdflatex latex.tex
-	pdflatex latex.tex
+latex-roviden.pdf: latex-roviden.tex
+	pdflatex  $<
+	pdflatex  $<
 
 clean:
 	rm *.log *.aux *.toc
