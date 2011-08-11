@@ -1,0 +1,500 @@
+%Ez a fájl latex2html-el készített html oldalakhoz lett készítve.
+%Bõvebb információ www.roik.bmf.hu/harp/latex
+% vagy www.roik.bmf.hu/matek/komplex
+\documentclass[a4paper]{article}
+\usepackage{t1enc}
+\usepackage[latin2]{inputenc}
+\usepackage[magyar]{babel}
+\newcommand{\kozep}{\\ {\centering ---}\\} 
+\newcommand{\htmlbetu}{\large}
+%\newcommand{\ujlap*}{\\ {\centering  STOP} \section{Címtelen}} 
+\newcommand{\ujlap}[1]{Ha készen van lapozzon. (Next) \subsection{#1}} 
+
+\begin{document}
+
+\title{A komplex számok}
+\author{Horváth Árpád, BMF SZGTI, Székesfehérvár}
+\date{2000. szeptember 16.}
+\maketitle
+Villamos-mérnökasszisztens hallgatók számára írt oktatóprogram
+
+Szükséges alapismeretek:
+\begin{itemize}
+ \item mûveletek azonosságai, fõként a hatványozásé,
+ \item a sin, cos, tg és $e^x$ függvény tulajdonságai,
+ \item nevezetes azonosságok: \((a-b)(a+b)=?, (a \pm b)^2 =?\),
+ \item fok és radián közötti átváltás.
+\end{itemize}
+
+A tananyag Scharnitzky Viktor: Vektorgeometria és lineáris algebra
+címû könyvére (Nemzeti Tankönyvkiadó Rt., Bp., 1999) épül. Erre a továbbiakban ,,a tankönyv'' néven hivatkozunk.
+
+ \section{A komplex szám fogalma és az algebrai alak}
+ \subsection{Kezdet}
+ Van-e olyan valós szám, amelynek négyzete -1?
+
+ \ujlap{Mit várunk el az újfajta számoktól? (4 követelmény)}
+ Nincsen, mert minden valós szám négyzete pozitív,
+ vagy nulla (röviden nemnegatív).
+ \kozep
+ Szeretnénk olyan -- a valós számoknál bõvebb -- számhalmazt
+ megalkotni, ahol
+\begin{enumerate}
+ \item az összes számból vonható négyzetgyök,
+ \item a mûveletek nem vezetnek ki a számhalmazból
+   (például két újfajta szám összege, szorzata is
+    egy újfajta szám legyen),
+ \item  a valós számok közötti összes mûveleti tulajdonság érvényben marad, és
+ \item  tartalmazza az összes valós számot.
+\end{enumerate}
+ Ez precízebben megtalálható a függelékben \pageref{fej:szamtest}.oldalon.
+
+ Jelöljön 'i' egy olyan (újfajta, nem valós) számot, amelynek négyzete
+ $-1$ $(i^2=-1)$. Ha az összes mûveleti tulajdonság érvényben marad,
+ mivel lesz egyenlõ $i^3$?
+
+ \ujlap{Hatványai: köb}
+ $i^3 =  i^2 \cdot i = -1 \cdot i = -i$ \kozep
+ Mivel lesz egyenlõ $i^4$?
+
+ \ujlap{Negyedik hatvány}
+ $i^4 = i^2 \cdot i^2 = -1 \cdot (-1) = 1$ (Másképp is számolható.)
+ \kozep
+ És $i^5, i^6, i^{100}$?
+ 
+ \ujlap{Hatványai: általában}  $i^5 = i^4 \cdot i = 1 \cdot i = i$
+ Látszik, hogy az négyes periódussal ismétlõdnek a hatványok értékei.
+ $i^6=-1$, és $i^{100}=1$, mert a kitevõ néggyel osztható. 
+ \kozep
+ Az 'i'-t  imaginárius (vagy képzetes) egységnek nevezzük.
+ Ezt szorozhatjuk valós számmal. Az i többszöröseit
+ képzetes számoknak nevezzük. 
+
+ Mivel egyenlõ $(4i)^2$?
+
+ \ujlap{Mûvelet 1} $(4i)^2=4^2 i^2=16\cdot (-1)=-16$
+ \kozep Hogyan jelölhetnénk azt a számot, amelynek négyzete $-9$?
+
+\ujlap{Mûvelet 2} 3i-vel. (Az elõzõhöz hasonlóan belátható. Sõt a $-3i$ is jó!)
+ \kozep  Mostmár minden valós számból vonhatuk gyököt.
+ De mit kapunk, ha egy valós és képzetes számot összeadunk vagy kivonunk
+ mi lesz az eredmény?
+
+ Se nem valós, se nem képzetes. Tehát a keresett számkörben ezeknek az
+ összegeknek is bent kell lenniük (3. követelmény).
+ Belátható, hogy az összes ilyen összegként elõálló szám által alkotott
+ halmaz teljesíteni fogja az általunk megszabott követelményeket.
+ Ezt a halmazt nevezzük a \emph{komplex számok halmazának} (jele: \textrm{C}),
+ elemeit pedig \emph{komplex számoknak}.
+
+ Minden komplex számot felirhatunk $a+bi$ alakban  ( a és b valós számok).
+ Ez a komplex szám algebrai alakja. 
+ \kozep
+ Mi lesz a 2-3i komplex szám négyzete?
+ (Emlékszünk rá, hogy úgy szeretnénk bõvíteni a valós számok halmazát,
+ hogy a mûveleti szabályok megmaradjanak.)
+
+\ujlap{Négyzete} $(2-3i)^2= 2^2-12i+9i^2=4-12i-9=-5-12i$. Ez is komplex szám.
+ \kozep Mi lesz a (4-3i)(5+2i) szorzat eredménye?
+
+\ujlap{Szorzás}
+ (4-3i)(5+2i)=$4\cdot 5 + 4\cdot 2i- 5\cdot 3i-3i\cdot 2i=$\\
+  =20+8i-15i-$6i^2$=20-7i-6(-1)=26-7i.
+ \kozep Nehezebb kérdés (kihagyható): Milyen a+bi számmal kell megszorozni
+ $2+3i$-t, hogy hármat kapjunk.
+
+\ujlap{Fordított feladat} Csak az eredményt közlöm:
+ $\frac6{13}-\frac9{13}i$-dal.
+ \kozep Mennyi lesz (4-2i)(4+2i)?
+
+\ujlap{Szorzás2} 16+8i-8i+4=20.
+ \kozep Mivel lehet szorozni $2-3i$-t, hogy egész számot kapjunk?
+ (Hány megoldás van? Segít az elõzõ feladat.)
+
+\ujlap{'Egészre szorzás'} Pl. $2+3i$-vel (ekkor az eredmény 13),
+ vagy ennek többszörösével.
+ (Végtelen sok megoldás van.)
+ \kozep Igazoljuk, hogy (a-bi)(a+bi) mindíg valós szám.
+
+\ujlap{Konjugált} \(\underbrace{(a-bi)}_{\displaystyle z} \underbrace{(a+bi)}_{\displaystyle{ \overline z}}
+   =a^2-abi+abi+b^2=a^2+b^2\)
+ \kozep A komplex számokat  általában $z, z_1, z_2, \ldots$-vel jelöljük.
+ Ha a képzetes rész elõjelét megváltoztatom,
+ a szám \emph{konjugáltját} kapom.\\
+ Jele: $\overline z, \overline z_1, \ldots$\\
+ Ha $z_1=10-2i, \overline z_1=?$  
+
+\ujlap{Szám szorozva konjugáltjával} $\overline z_1= 10+2i$
+ \kozep Mivel egyenlõ $z_1\cdot \overline z_1$?
+
+\ujlap{Koordináta1} \(z_1\cdot \overline z_1= (10-2i)(10+2i)=\ldots=104\). 
+ A már felfedezett \framebox{$(a-bi)(a+bi)=a^2+b^2$}
+ azonosság alapján is számolható.
+ \kozep
+  A komplex számot koordinátarendszerben is szoktuk ábrázolni.
+ %}
+
+\begin{figure}[!h]
+  \unitlength 2mm 
+  \htmlbetu
+ %\makebox(110,35){
+  \begin{picture}(40,25)(-5,-5)
+     \thinlines
+     \put(-3,0){\vector(1,0){33}}
+     \put(0,-3){\vector(0,1){18}}
+     \thicklines
+     \put(0,0){\vector(2,1){20}}
+%     \put(2,15){\makebox(0,0)[l]{y}}
+%     \put(30,-2){\makebox(0,0)[lt]{x}}
+     \put(20,-2){\makebox(0,0)[t]{2}}
+     \put(-2,10){\makebox(0,0){1}}
+     \put(25,-1){\makebox(0,0)[l]{valós tengely}}
+     \put(1,15){\makebox(0,0)[l]{képzetes tengely}}
+     \thinlines
+     \multiput(10,-1)(10,0){2}{\line(0,1){2}} 
+     \put(-1,10){\line(1,0){2}} 
+  \end{picture}
+ %}
+\end{figure}
+ A vizszintes tengelyen helyezkednek el a valós számok.
+ A sík összes többi pontjához is tartozik egy-egy komplex szám.
+ Az ábrán $z=2+1i$. A kettõt nevezzük a z valós részének. Jele: Re~z.
+ 
+ Az i-t nevezzük a z imaginárius vagy képzetes részének. Jele: Im~z.
+\kozep
+ Ábrázoljuk a $z=4+3i$-t és konjugáltját.
+
+\ujlap{Koordináta2}
+\begin{figure}[!h]
+  \unitlength 10mm 
+  \htmlbetu   % htmlben túl kicsi betûket ad
+%\makebox(110,35){
+  \begin{picture}(10,9)(-1.5,-3.5)
+     \thicklines
+     \put(-1.5,0){\vector(1,0){7}}
+     \put(0,-3.5){\vector(0,1){8}}
+     \thinlines
+     \put(0,0){\vector(4,3){4}}
+     \put(0,0){\vector(4,-3){4}}
+     \put(0.2,4.5){\makebox(0,0)[l]{Im z}}
+     \put(5,-0.5){\makebox(0,0)[lt]{Re z}}
+     \put(4,-0.5){\makebox(0,0)[t]{4}}
+     \put(-0.5,3){\makebox(0,0){3}}
+     \put(2,2){\makebox(0,0){$z$}}
+     \put(2,-2){\makebox(0,0){$\overline z$}}
+     \multiput(-1,-0.2)(1,0){7}{\line(0,1){0.4}} 
+     \multiput(-0.2,-3)(0,1){7}{\line(1,0){0.4}} 
+  \end{picture}
+\end{figure}
+
+
+
+
+ $\overline z= 4-3i$. A konjugált a grafikonon az x tengelyre való
+ tükrözéssel kapható meg.
+\kozep
+ A vektor hosszát nevezzük z \emph{abszolútértékének}.\\
+ Jele: |z|.
+ Mekkora az ábrán látható z és $\overline z$ számok abszolútértéke?
+
+\ujlap{Abszolútérték1}
+ Pitagorasz tételbõl: |z|=$\sqrt{3^2+4^2}=5$
+\kozep Hogyan általánosítható ez tetszõleges\\
+ z=a+bi komplex számra?
+
+\ujlap{Abszolútérték2}
+$|z|=\sqrt{a^2+b^2}$
+\kozep Hol szerepelt már az $a^2+b^2$ kifejezés?
+
+\ujlap{Abszolútérték3}
+$z\overline z =a^2+b^2$.
+\kozep Ezalapján írható:\\
+\framebox{$|z|=\sqrt{z\overline z}=\sqrt{a^2+b^2}$}
+
+Mely komplex szám lesz a $\sqrt{-4}$?
+
+\ujlap{Egyenlet1}
+Segítség: Az elején szerepelt olyan feladat, minek 
+a négyzete\dots Minek a négyzete tehát -4?
+
+\ujlap{Egyenlet2}
+2i (és -2i) négyzete. Komplex számkörben a  $\sqrt{-4}$
+két számot jelent.
+
+\(\sqrt{-4}=
+ \left\{
+ \begin{array}{l}
+ 2i\\
+ -2i
+ \end{array}
+ \right .
+\)
+\kozep
+
+Milyen komplex számok lesznek az\\
+$x^2-4x+5=0$ egyenlet megoldásai?
+
+\ujlap{Egyenlet2}
+Segítség: a másodfokú egyenletmegoldó képlettel megoldható.
+
+\ujlap{Egyenlet3}
+$x_{12}=\displaystyle\frac{4\pm\sqrt{-4}}2=\displaystyle\frac{4\pm 2i}2$
+
+\[x_1= 2+i,\quad x_2= 2-i.\]
+
+Vége az elsõ résznek. Oldja meg az összefoglaló feladatokat!
+
+\section{A trigonometrikus alak}
+\subsection{Irányszög 1}
+\begin{figure}[!h]
+  \unitlength 2mm 
+  \htmlbetu
+  \begin{picture}(35,25)(-5,-5)
+     \thinlines
+     \put(-3,0){\vector(1,0){33}}
+     \put(0,-3){\vector(0,1){18}}
+     \thicklines
+     \put(0,0){\vector(2,1){16}}
+     \put(2,15){\makebox(0,0)[l]{y}}
+     \put(30,-2){\makebox(0,0)[lt]{x}}
+     \put(2,10){\makebox(0,0)[l]{$r=|z|=2$}}
+     \put(6,2){\makebox(0,0)[l]{$\varphi =30^o$}}
+     \thinlines
+     \multiput(10,-1)(10,0){2}{\line(0,1){2}} 
+     \put(-1,8){\line(1,0){2}} 
+  \end{picture}
+\end{figure}
+
+ Az ábrán látható (30 fok irányszögû) komplex számnak mekkora lesz a valós és
+ a képzetes része? Hogyan számolhatjuk ki?
+
+\ujlap{Irányszög 2}
+\begin{figure}[!h]
+  \unitlength 2mm 
+  \htmlbetu
+  \begin{picture}(20,14)(0,-5)
+     \thinlines
+     \put(0,0){\line(1,0){16}}
+     \put(16,0){\line(0,1){8}}
+     \thicklines
+     \put(0,0){\vector(2,1){16}}
+     \put(17,4){\makebox(0,0)[l]{b}}
+     \put(8,-1){\makebox(0,0)[t]{a}}
+     \put(2,7){\makebox(0,0)[l]{$r=2$}}
+     \put(6,2){\makebox(0,0)[l]{$\varphi =30^o$}}
+  \end{picture}
+\end{figure}
+
+ Szögfüggvényekkel:
+ \[ \sin \varphi = \frac br,\,\underline{b=r \sin \varphi}
+   =2\sin 30^o=1, \]
+ A képzetes rész tehát \(\mathrm{Im}\, z=1i=i\)\\
+ hasonlóan kapható a valós rész: \( \mathrm{Re}\,z=\underline{ a=r\cos\varphi}=2\cos 30^o
+  =\sqrt 3 \approx 1,73\).
+ Azaz $z=1,73+i$.
+ \kozep
+ A két aláhúzott összefüggés igaz-e a többi síknegyedben is?
+
+\ujlap{Trigonometrikus alak}
+ Igen, hiszen általánosan a $\varphi$ irányszögû \textbf{egység}vektor
+ koordinátájaként definiáltuk a $\cos\varphi,\,\sin\varphi$
+ függvényeket. Ha nem egységnyi, hanem r hosszúságú a vektor,
+ akkor a koordinátái is nyilván r-szeresei lesznek a szögfüggvényeknek.
+\kozep
+ Bármely komplex szám  felírható tehát
+ \[r\cos\varphi+(r \sin \varphi)i=r(\cos\varphi+i\sin \varphi)\]
+ alakban is. Ezt nevezzük a komplex szám
+ \emph{trigonometrikus alakjának}. Az $r$ a komplex szám abszolútértéke, a
+ $\varphi$-t pedig a komplex szám \emph{argumentumának} vagy
+ \emph{irányszögének} nevezzük.
+\kozep
+ Írjuk fel az r=7 és $\varphi=200^o$ adatokkal megadott komplex szám
+ trigonometrikus és algebrai alakját.
+ (Az $a+bi$ alakot nevezzük \emph{algebrai alaknak}.)
+
+\ujlap{Trigonometrikus alakra hozás 1}
+ \[z=7(\cos 200^o+ i\sin 200^o),\]
+ illetve
+ \[z=7(-0,940+ i\cdot(-0,342)),\]
+ \[z=-6,577-2,39i.\]
+\kozep
+ A $z=-3+4i$ számot szeretnénk felírni trigonometrikus alakban.
+ Mekkora lesz az r?
+
+\ujlap{Trigonometrikus alakra hozás 2}
+ $r=|z|=\sqrt{a^2+b^2}=5$
+\kozep
+ A $ \varphi$ szöget a $\mathrm{tg}\,\varphi =\displaystyle\frac ba$-ból
+ számolhatjuk. Vigyázni kell azonban, mert a tg függvény periódikus.
+ Egy körön belül minden értéket kétszer vesz fel.\\
+ Gyakorlatban érdemes lerajzolni a kérdéses vektort, így az irányszög meghatározását egy hegyesszög meghatározására vezethetjük vissza. 
+\kozep
+ Mekkora tehát a $ \varphi$?
+ Mi lesz a trigonometrikus alak?
+
+\ujlap{Szorzás 1}
+% \(\varphi=\mathrm{arctg}\,\displaystyle\frac ba +180^o=\mathrm{arctg}\,\left(-\displaystyle\frac43 \right)+180^o
+%	=126,9^o\)
+ \(\varphi= 180^o-\mathrm{arctg}\,\left(\displaystyle\frac43 \right)
+	=126,9^o\)
+ \[z=5(\cos 126,9^o+ i\sin 126,9^o),\]
+ \kozep
+ A trigonometrikus alakban végezhetõ el a(z akárhányadik) gyökvonás
+ viszonylag könnyedén. Elõbb azonban nézzük a szorzást.\\
+ Vajon hogyan számolható ki \(r_1(\cos \varphi_1 + i \sin \varphi_1)\)
+ és \(r_2(\cos \varphi_2 + i \sin \varphi_2)\) komplex számok szorzata? 
+ Megpróbálhatják önállóan levezetni. A trigonometrikus azonosságok
+ alapos ismerete kell hozzá (pl. \(\sin(\alpha+\beta)\)) .
+ Nehezebb, nem kötelezõ.
+ 
+\ujlap{Szorzás 2}
+ Az \(r_1(\cos \varphi_1 + i \sin \varphi_1)\)
+ és \(r_2(\cos \varphi_2 + i \sin \varphi_2)\) komplex számok szorzata
+ így számolható:
+ \[r_1(\cos \varphi_1 + i \sin \varphi_1)\cdot r_2(\cos \varphi_2 + i \sin \varphi_2)
+  = r_1r_2(\cos (\varphi_1+\varphi_2) + i \sin (\varphi_1+\varphi_2)). \]
+ Az abszolútértékek (r) szorzódnak, az argumentumok összeadódnak több
+ tényezõ esetén is.\\
+ (A levezetés a tankönyvben megtalálható. Nem szükséges tudni.)
+ \kozep
+ \(z_1=5(\cos20^o+i\sin 20^o),\,z_2=3(\cos200^o+i\sin 200^o)\)\\
+ $z_1 z_2=?$
+
+\ujlap{Hatványozás 1}
+ \[z_1 z_2=15(\cos220^o+i\sin 220^o).\]
+ Algebrai alakokkal ellenõrizhetjük, valóban így van-e.
+ \kozep
+ A szorzás szabályából következik a hatványozás szabálya.
+ 
+ Mekkora lesz \({z_1}^2\), ha \(z_1=5(\cos20^o+i\sin 20^o)\)?
+
+\ujlap{Hatványozás 2}
+ \[{z_1}^2=z_1 z_1=25(\cos40^o+i\sin 40^o).\]
+ \kozep
+ Könnyen belátható, hogy n-dik hatványnál a szabály:
+  \[(r(\cos \varphi + i \sin \varphi))^n = r^n(\cos n\varphi + i \sin n\varphi).\]
+ \kozep
+ Mi lesz tehát $z^3$ értéke, ha \(z_1=2(\cos20^o+i\sin 20^o)\)?
+
+\ujlap{Hatványozás 3}
+ \[z^3=8(\cos60^o+i\sin 60^o).\]
+ \kozep
+ Mi lesz $z^4$ értéke?
+   
+\ujlap{Gyökvonás 1}
+ \[z^4=16(\cos80^o+i\sin 80^o).\]
+ \kozep
+ Hogyan írható hatvány alakban \(\sqrt[\displaystyle3]z\)?
+
+\ujlap{Gyökvonás 2}
+ \(\sqrt[\displaystyle3]z=z^{\frac13}\) (egyharmadikon) 
+ \kozep
+ Ebbõl sejthetõ, hogy ekkor $\varphi$-t osztani kell hárommal. Azonban 
+ itt vigyázni kell, az osztáskor már a $360^o$-os periódussal
+ is számolni kell, ez is lecsökken $120^o$-osra. 
+
+ Általában n-dik gyöknél:
+    \[\sqrt[\displaystyle n]{r(\cos \varphi + i \sin \varphi)}=
+    \sqrt[\displaystyle n] r\left(\cos\frac{\varphi+k\cdot 360^o}n 
+      + i \sin \frac{\varphi+k\cdot 360^o}n\right),\]
+ ahol k=0;1;\dots;n-1.
+
+ Tehát az n-edik gyök n különbözö komplex számot jelent.
+
+ Például: Ha $z=27(\cos 120^o +i\cdot\sin 120^o)$ köbgyöke:
+ \[ \sqrt[\displaystyle3]z =3\left( \cos \frac{120^o+k\cdot360^o}3+i\sin\frac{120^o+k\cdot360^o}3 \right), \] 
+ ahol k=0;1;2.
+ 
+ Az eredmény irányszöge egyszerûsítve:
+ \(40^o+k\cdot120^o\), amely k=0;1;2 értékekre $40^o; 160^o$ ill. $280^o$
+ értékeket ad. (Érdemes ábrázolni ezeket a komplex számokat.)
+ 
+ k=3 esetben \(40^o+360^o\)-ot, de ez ugyanazt a komplex számot
+ adja, mint amit a k=0 esetben kaptunk.
+
+ Tehát 
+ \[\sqrt[\displaystyle3]z =\left\{
+ \begin{array}{l}
+ 3\left( \cos40^o +i\sin40^o \right)\\
+ 3\left( \cos160^o +i\sin160^o \right)\\
+ 3\left( \cos280^o +i\sin280^o \right)\\
+ \end{array}
+ \right.
+  \]
+ \kozep
+ Mi lesz  \(\sqrt[\displaystyle4]z\), ha \(z=16\left( \cos16^o +i\sin16^o \right)\)?
+
+\ujlap{Befejezõ lap}
+ \[\sqrt[\displaystyle4]z =\left\{
+ \begin{array}{l}
+ 2\left( \cos4^o +i\sin4^o \right)\\
+ 2\left( \cos94^o +i\sin94^o \right)\\
+ 2\left( \cos184^o +i\sin184^o \right)\\
+ 2\left( \cos274^o +i\sin274^o \right)\\
+ \end{array}
+ \right.
+  \]
+ 
+\ujlap{Otthoni munka}
+ Otthoni feladatként nézzék át a Vektorgeometria tankönyv
+ komplex számok fejezetét. 
+
+ Nem lesznek számonkérve a 3.1 fejezet egyes részei és a
+ 3.2.3 C), 3.3.4, 3.4.3  fejezetek.
+ A trigonometrikus alaknál a szorzási és osztási szabályt nem 
+ kell tudni levezetni.
+
+ A 3.4 fejezet a jövõ tanóra anyaga lesz.
+ A feladatokat igyekezzenek elõször önállóan megoldani.\\
+
+ \qquad Jó munkát hozzá!
+
+ \section{A komplex számok exponenciális alakja}
+ Nincs készen.
+
+
+ \section{Függelék: A test fogalma és a komplex számtest}\label{fej:szamtest} 
+
+ A komplex számok teljesértékû bevezetéséhez szükségünk van a test fogalmára.
+
+ \subsection{A test fogalma}
+ \emph{Testenek} nevezünk egy T halmazt, ha van rajta értelmezve két mûvelet az
+ késõbb részletezett tulajdonságokkal. A mûveletet általában szorzásnak 
+ és összeadásnak nevezzük, és a szokásos módon jelöljük.
+ ($a\cdot b$ vagy ab illetve a+b)\\
+ A mûvelet fogalmába beleértjük, hogy bármely két T halmazbeli elem szorzata
+ és összege is a T halmazban van.
+ Tulajdonságaik:
+
+ \begin{enumerate}
+ \item Asszociatívak: $(a+b)+c=a+(b+c)$, $(ab)c=a(bc)$
+ \item Kommutatívak: $a+b=b+a$, $ab=ba$
+ \item Van nulleleme, azaz van benne olyan 0-val jelölt szám, melyre bármely
+    T-beli b szám esetén b+0=b.
+ \item Minden számnak van ellentettje, azaz bármely b számhoz található olyan 
+    $b^*$ szám, melyre $b+b^*=0$. A $b^*$-ot hívjuk b ellentettjének. Szokásos jele: -b.
+ \item Van egységeleme, azaz van benne olyan 1-el jelölt szám, melyre bármely
+    T-beli b szám esetén $b\cdot1=b$.
+ \item Minden 0-tól különbözõ számnak van reciproka,
+    azaz bármely b számhoz található olyan $b^*$ szám, melyre $b\cdot b^*=1$.
+    A $b^*$-ot hívjuk b reciprokának. Szokásos jele: $b^{-1}$ vagy $\frac1b$.
+ \item Az összeadás a szorzásra nézve disztributív, azaz
+    bármely T-beli a, b, c számhármas esetén $(a+b)c=ac+bc$
+ \end{enumerate}
+
+ Gondoljuk végig, hogy mindez igaz a valós, sõt a racionális számokra is,
+ de nem igaz az egész számokra (pl. a kettõnek nincs reciproka
+ az egész számok halmazában).
+
+  \subsection{Követelmények, amit az új számhalmaztól elvárunk}
+
+ \begin{enumerate}
+ \item az összes számból vonható négyzetgyök,
+ \item a kapott számhalmaz is testet alkot,
+ \item tartalmazza az összes valós számot.
+ \end{enumerate}
+
+ A komplex számtest precíz bevezetése megtalálható a tankönyv 131. oldalán.   
+
+\end{document}
+

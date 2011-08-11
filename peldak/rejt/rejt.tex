@@ -1,0 +1,74 @@
+%_*_Mode: LaTeX_*_
+\documentclass[a4paper]{article}
+\usepackage{t1enc}
+\usepackage[T1]{fontenc}      %ujabb betuertelmezo
+\usepackage[latin2]{inputenc}
+\usepackage{graphics}
+\usepackage[magyar]{babel}
+\usepackage{ulem}
+\frenchspacing 
+\usepackage{pslatex}
+\usepackage{times}
+
+\begin{document}
+\title{Titkos üzenet betûk mozgatásával}
+\author{Tóth Mihály ötlete alapján Horváth Árpád próbálkozásai}
+\maketitle
+\setlength{\parindent}{0pt}
+\section{Függõleges mozgatás}
+A B és D betûk egyszeresen az F betû duplán van süllyesztve.
+
+\def\le#1{\lower 1pt\hbox{#1}}
+A\le BC\le D\le{\le E}F 1pt-tal
+
+\def\le#1{\lower 0.1pt\hbox{#1}}
+A\le BC\le D\le{\le E}F 0.1pt-tal
+
+\def\le#1{\lower 0.3pt\hbox{#1}}
+A\le BC\le D\le{\le E}F 0.3pt-tal
+
+\def\le#1{\lower 0.5pt\hbox{#1}}
+A\le BC\le D\le{\le E}F 0.5pt-tal
+
+\def\le#1{\lower 0.05ex\hbox{#1}}
+Ezekben a sorokban a betûmagasság 20-adrészével.
+
+{\small A\le BC\le D\le{\le E}F}
+A\le BC\le D\le{\le E}F 
+
+{\large A\le BC\le D\le{\le E}F}
+{\Large A\le BC\le D\le{\le E}F}
+
+{\Huge A\le BC\le D\le{\le E}F}
+
+\section{Vizszintes mozgatás}
+
+Itt már összébbhúzva vannak. Minden második köz kisebb.
+
+\def\be#1{\kern -0.3pt\hbox{#1}}
+
+MM\be MM\be MM\be M 0.3pt-tal
+
+\def\be#1{\kern -0.1pt\hbox{#1}}
+
+MM\be MM\be MM\be M 0.1pt-tal
+
+MMMMMMM Ez egy nem piszkált szöveg.
+
+\section{Betûk, szavak alakjának változtatása}
+%\sout{Ezeket sajnos csak PostScript fájlban tudom küldeni.}
+%Mégis tudom pdf-ben is küldeni.
+
+{\Huge T\scalebox{1.05}{T}T}
+A középsõ betû 5\%-kal nagyobb.
+
+T\scalebox{1.2}[1]{T}T
+A középsõ betû 20\%-kal szélesebb, de normál
+magasságú.
+
+b\rotatebox{10}{a}b
+Az $a$ 10 fokkal el van forgatva.
+
+\scalebox{0.01}{Nagyon pici.} \scalebox{0.001}{És mégkisebb.}
+
+\end{document}

@@ -1,0 +1,27 @@
+\documentclass{article}
+% pdflatex --shell-escape multiple_output.tex
+% http://tex.stackexchange.com/questions/5228/can-one-tex-file-output-to-multiple-pdf-files/5265#5265
+
+\ifx\conditionmacro\undefined
+  \immediate\write18{%
+    pdflatex --jobname="\jobname1"
+    "\gdef\string\conditionmacro{1}\string\input\space\jobname"
+  }%
+  \immediate\write18{%
+    pdflatex --jobname="\jobname2"
+    "\gdef\string\conditionmacro{2}\string\input\space\jobname"
+  }%
+  \immediate\write18{%
+    pdflatex --jobname="\jobname3"
+    "\gdef\string\conditionmacro{3}\string\input\space\jobname"
+  }%
+  \expandafter\stop
+\fi
+
+\begin{document}
+\ifnum\conditionmacro=1 Condition is 1\fi
+\ifnum\conditionmacro=2 Condition is 2\fi
+\ifnum\conditionmacro=3 Condition is 3\fi
+
+\verb|\conditionmacro| is \texttt{\meaning\conditionmacro}.
+\end{document}

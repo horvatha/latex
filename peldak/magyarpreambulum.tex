@@ -1,0 +1,46 @@
+%%%% Az ábrákhoz szükséges csomagok
+\usepackage{graphics}
+\usepackage{psfrag}
+
+%%%% A magyar nyelvvel és a karakterek kódolásával
+%%%% kapcsolatos csomagok
+\usepackage{t1enc}
+\usepackage[latin2]{inputenc}
+\usepackage[magyar]{babel}
+\usepackage{indentfirst}  % Az elsõ bekezdést is behúzza.
+\frenchspacing   % A mondatvégek után azonos szóköz van, mint máshol
+    % (Az angolban nagyobb a szokás. Ez az alapbeállítás.)
+
+% A pdf kisebb és olvashatóbb lesz, ha times betûket használok.
+\usepackage{times}
+
+\usepackage{mathptm}  % A mathptm a képletekben is times-t használ.
+    % Összeakad az amssymbol vagy az amsmath csomaggal (amsfont).
+    % Talán nincsenek telepítve valamilyen fontjaim.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Az Amerikai Matematikai Társulat (AMS)
+%%%% hasznos csomagja  (pl. \dfrac)
+\usepackage{amsmath}
+
+% Magyar függvénynevek
+\DeclareMathOperator{\tg}{tg}
+\DeclareMathOperator{\sh}{sh}
+\DeclareMathOperator{\ch}{ch}
+\DeclareMathOperator{\cth}{cth}
+\DeclareMathOperator{\ctg}{ctg}
+\DeclareMathOperator{\arctg}{arctg}
+\DeclareMathOperator{\arcctg}{arcctg}
+\DeclareMathOperator{\arsh}{arsh}
+\DeclareMathOperator{\arch}{arch}
+\DeclareMathOperator{\arth}{arth}
+\DeclareMathOperator{\arcth}{arcth}
+
+% Ezzel a duplaszárú betûk elérhetõek.
+% Pl. valós számok halmazjele:  \mathbb{R}
+% (Nem tökéletes, mert mindkét oldalon dupla.)
+%\usepackage{amssymb}
+
+% A felsorolások megkönnyítésére.
+% Használható a \begin{enumerate}[a)]-szerû felsorolás-típus megadás.
+\usepackage{enumerate}

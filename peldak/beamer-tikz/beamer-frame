@@ -1,0 +1,10 @@
+\begin{frame}<beamer>[fragile]
+  \frametitle{}
+
+  \includegraphics[width=0.9\textwidth]{}
+
+  \begin{itemize}
+    \item <+-| alert@+>
+  \end{itemize}
+\end{frame}
+

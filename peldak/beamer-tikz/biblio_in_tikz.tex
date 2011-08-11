@@ -1,0 +1,26 @@
+\begin{filecontents}{\jobname.bib}
+@article{test,
+author= {Peter Griffin},
+title= {Ahh that hurts},
+journal={Drunken Clam Reviews},
+year={2001},
+}
+
+\end{filecontents}
+
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{lipsum}
+
+\begin{document}
+\bibliographystyle{unsrt}
+\lipsum[1]
+\cite{test}
+
+\begin{tikzpicture}
+ \node[draw,fill=blue!50, rounded corners] {\parbox{10cm}{\bibliography{\jobname}}};
+\end{tikzpicture}
+
+
+\end{document}
+

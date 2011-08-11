@@ -1,0 +1,19 @@
+\listfiles
+\documentclass{article}
+\usepackage{graphicx,pstricks}
+\newsavebox\IBox
+\begin{document}
+
+% See: http://tex.stackexchange.com/questions/19938/how-can-i-clip-an-image-via-a-bezier-path 
+
+\savebox\IBox{\includegraphics{Mycena_interrupta_small.jpg}}
+
+\begin{pspicture}(\wd\IBox,\ht\IBox)
+\psclip{\pscustom[linestyle=none]{%
+  \psline(0,0.2\ht\IBox)(0,\ht\IBox)(\wd\IBox,\ht\IBox)(\wd\IBox,0.3\ht\IBox)
+  \psbezier(0.75\wd\IBox,0)(0.25\wd\IBox,0.5\ht\IBox)(0,0.2\ht\IBox)}}
+  \rput[lb](0,0){\usebox\IBox}
+\endpsclip
+\end{pspicture}
+
+\end{document}

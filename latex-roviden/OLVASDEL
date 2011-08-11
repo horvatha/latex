@@ -1,0 +1,15 @@
+Fordítása:
+
+Legegyszerűbben:
+make                    (PDF)
+
+pdflatex latex.tex	(PDF)
+
+vagy
+latex latex.tex		(dvi)
+
+vagy
+latex2html latex.tex	(html)
+
+Készítette: Horváth Árpád
+ http://www.arek.uni-obuda.hu/harp
