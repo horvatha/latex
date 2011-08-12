@@ -1,0 +1,139 @@
+\documentclass[12pt]{article}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+\usepackage[english, german, magyar]{babel}
+\usepackage{shapepar}
+\usepackage{picinpar}
+\usepackage{graphicx}
+\usepackage{cwpuzzle}
+\usepackage{color}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{\baselineskip}
+
+\begin{document}
+
+\title{\LaTeX\ ízelítő}
+\author{Horváth Árpád}
+\maketitle
+
+
+%\section{Ide jöhet a saját fejezetem}
+% Segít a latex-rovid.pdf fájl.
+
+\section{Mi az a \LaTeX?}
+\parbox{0.45\textwidth}{Egy dokumentumleíró nyelv, mely sokmindenben a
+HTML-hez hasonlít, de végcélja egy nyomtatott dokumentum készítése.
+Vannak hozzá olyan szövegszerkesztők, amelyeknél a végeredményt rögtön
+látom, de mivel rengeteg különböző (akár házilag írt) csomagot
+használhatunk vele, ezért lehetetlen, hogy mindet ismerje.}
+%
+\rotatebox[origin=c]{30}{
+\parbox{.55\textwidth}{
+Példák dokumentumformátumokra:\\[1ex]
+\begin{tabular}{|c|c|}
+\hline
+WYSIWYG		&forrásként is szerkeszthető\\
+\hline
+MSWord		&\TeX\\
+OpenOffice.org	&\LaTeX\\
+AbiWord		&HTML\\
+KOffice		&XML\\
+\hline
+\end{tabular}
+}}%parbox és rotatebox vége.
+
+%Az elforgatáshoz a graphicx csomag kell.
+
+
+\newpage
+\section{Miért szeretem a \LaTeX-et}
+%%%
+%%% shapepar
+%%%
+{\color{red}
+\begin{center}
+%\parbox{5cm}{
+\heartpar
+{ Ebben a rövid előadásban szeretném megmutatni, hogy miért érdemes \LaTeX-et
+használni. Hogy pár dologban ugyan kellemetlenebb mint a ,,rögtön 
+látom'' szövegszerkesztők, azonban több dologgal kárpótol ezért.
+Pár dolog, ami teszik benne, hogy saját maga foglalkozik az elválasztással,
+és a kinézettel,
+nekem csak a dokumentum tartalmi részére kell összpontosítanom.
+Ügyesen sorszámozza az ábrákat, fejezeteket, táblázatokat.
+A \LaTeX\ fájl kicsi, a belőle készülő dvi, PDF vagy PostScript fájlok
+viszont teljesen ugyanazt mutatják egyik gépen (PC+Windows), mint egy másikon
+(SUN+UNIX). Ráadásul sok program áll rendelkezésemre teljesen ingyen az 
+ábrakészítéstől (xfig) elkezdve a(z akár kétváltozós) grafikonok
+elkészítésén (gnuplot, pylab) át az egyes szakterületek munkáját megkönnyítő
+\LaTeX-csomagokig (különleges diagrammok, ábrák betűinek szöveghez
+igazítása, kémiai képletek, kotta, keresztrejtvény!).
+  S bár a képletek szerkesztése némi tanulást igényel, ez az idő
+megtérül annak, akinek gyakran kell.
+Egész jó prezentációk is készíthetőek a beamer csomaggal.
+Végül az is kellemes, hogy a képletekkel teli
+munkákat HTML-be át tudom alakítani. }%}
+\end{center}
+}%Idáig piros
+
+\newpage
+\section{Elválasztás}
+Az elválasztást, a magyar dátumformát, ábraaláírást (1. ábra), a dokumentum részeinek neveit
+(Tartalomjegyzék\dots) a \texttt{babel} csomag csinálja az utolsónak
+felsorolt nyelv alapján.
+
+\parbox{7mm}{Ezt a magyar helyesírás szerint választja el, a következőt viszont az angol szerint.}\qquad\qquad
+\foreignlanguage{english}{\parbox{7mm}{In english aren't very long words. integrated circuit, pamphlet, pantomime, steadfastness, unjustifiable}}\qquad\qquad
+\foreignlanguage{german}{\parbox{7mm}{Es ist Deutsch. Arbeitslosenunterstützung, Kraftwerk, Tonbandger\"{a}t.}}
+
+Ha mégsem lenne jó az elválasztás (ez a magyar résznél hamar kitűnik),
+akkor az elején valószínűleg jelzi a pdflatex, hogy a német és magyar
+elválasztást nem tudta betölteni.  Ubuntu és Debian alatt ekkor a
+texlive-lang-hungarian és texlive-lang-german csomagokat kell betölteni.
+
+\newpage
+%%% picinpar
+%%%
+\section{A picinpar csomag}
+A következő bekezdés példát mutat a picinpar csomag alkalmazására.
+
+\begin{window}[1,c,{\fbox{ABLAK}},{}]
+Ebben a bekezdésben az első sor után megjelenik egy ABLAK
+,,ablakkerettel'' körülvéve.  Az ablak előtt kezdődött sorok az ablak
+után folytatódnak.  Ábrák vagy táblázatok beágyazása ugyanígy
+történik.  Az opcionális argumentum harmadik és negyedik eleme
+egyetlen blokk kell hogy legyen. 
+\end{window}
+
+\newpage
+\section{Keresztrejtvény}
+
+(cwpuzzle csomag)
+
+\begin{Puzzle}{6}{7}%
+|{}	|{}	|{}	|{}	|[1]P	|{}	|.	
+|{}	|{}	|{}	|{}	|R	|{}	|.	
+|{}	|{}	|[2]H	|*	|O	|{}	|.	
+|{}	|{}	|I	|*	|T	|{}	|.	
+|[3]L	|C	|G	|*	|O	|{}	|.	
+|H	|*	|[4]G	|E	|N	|F	|.	
+|[5]C	|M	|S	|{}	|{}	|{}	|.	
+\end{Puzzle}
+
+\begin{PuzzleClues}{\textbf{Vizszintes: }}%
+  \Clue{3.}{LCG}{A CERN számításai ezen futnak}%
+  \Clue{4.}{GENF}{Ez a város a CERN székhelye}%
+  \Clue{5.}{CMS}{A hadronütköztető legnagyobb tömegű detektora}%
+\end{PuzzleClues}%
+\begin{PuzzleClues}{\textbf{Függőleges: }}%
+  \Clue{1.}{PROTON}{Atommagban van}%
+  \Clue{2.}{HIGGS}{Ezt keressük még a Standard modellből}%
+  \Clue{3.}{LHC}{Ez a nagy gyorsító indult 2008-ban}%
+\end{PuzzleClues}%
+
+\newpage
+\tableofcontents
+
+
+\end{document}
