@@ -168,7 +168,7 @@
     \begin{itemize}
 	\item Pylab = Numpy + Matplotlib\\
 	     $\approx$ MATLAB
-	\item Web-centric Visualisation Libraries:
+	\item Web-centric plotting libraries:
 	    bokeh, plotly
     \end{itemize}
 \end{minipage}
@@ -224,10 +224,28 @@ Do not use in scripts!
 \subsection{Matplotlib}
 
 \begin{frame}[fragile]
-  {First plots with matplotlib}
+  {First plot with matplotlib}
 
 \scriptsize
-\input{codes/visualization/first_plot.py.listing}
+\begin{minipage}[b]{.4\linewidth}
+    \input{codes/visualization/first_plot.py.listing}
+\end{minipage}
+\quad
+\includegraphics[width=.48\textwidth]{codes/visualization/first.pdf}
+
+\end{frame}
+
+\begin{frame}
+    {2nd plot}
+
+    \scriptsize
+\input{codes/visualization/trigonometry.py.listing}
+
+ \includegraphics[width=.48\textwidth]{codes/visualization/trigonometry.pdf}
+\end{frame}
+
+\begin{frame}[fragile]
+    {pylab}
 
 No needs of \verb+np.+ and \verb+plt.+ with \verb+from pylab import *+ or
 \begin{Verbatim}
@@ -235,16 +253,18 @@ from numpy import linspace, pi
 from matplotlib.pyplot import (plot, legend, savefig,
            close, xlabel, ylabel, title, grid)
 \end{Verbatim}
+
+\vfill
+For Jupyter notebook
+
+\begin{Verbatim}
+%matplotlib notebook
+\end{Verbatim}
+
+is enough.
 \end{frame}
 
-\begin{frame}
-    {The results}
-
- \includegraphics[width=.48\textwidth]{codes/visualization/first.pdf}
- \includegraphics[width=.48\textwidth]{codes/visualization/trigonometry.pdf}
-\end{frame}
-
-\begin{frame}
+\begin{frame}[fragile]
   {Bar plots and colors, tight layout}
 
 \scriptsize
@@ -253,14 +273,46 @@ from matplotlib.pyplot import (plot, legend, savefig,
   \includegraphics[width=.7\textwidth]{codes/visualization/bar_plots.pdf}
 \end{frame}
 
+\begin{frame}[fragile]
+    {sharex, sharey}
+
+\scriptsize
+\input{codes/visualization/sharex.py.listing}
+
+\vfill
+\normalsize
+\begin{Verbatim}
+    sharex, sharey : bool or {'none', 'all', 'row', 'col'}
+\end{Verbatim}
+\end{frame}
+
 \subsection{Pandas and Seaborn}
 
-\subsection{Further reading}
+\begin{frame}
+    {reverse legend}
+\end{frame}
 
+\section{CLO index plot script}
 
+%\section*{Conclusion}
 
-\section*{Conclusion}
-\addcontentsline{toc}{section}{Conclusion}
+\begin{frame}[fragile]
+    {Wes McKinney: Python for Data Analysis, 2nd edition}
+
+    \begin{itemize}
+	\item \verb+pyedu.hu/pandas2toc+
+    Chapter 9: Visualization
+	\item \verb+github.com/wesm/pydata-book+ ,
+	    \begin{itemize}
+		\item notebooks\\
+		    Notebooks for 1st edition works well in MS,
+		    but not Seaborn in it, some problems with the
+		    notebooks of 2nd edition\\
+		I can share a fixed one
+		\item data sets
+	    \end{itemize}
+    \end{itemize}
+\end{frame}
 
 \end{document}
 
